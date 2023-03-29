@@ -1,35 +1,51 @@
-public class WeatherData {
+import java.util.ArrayList;
+import java.util.List;
 
-    // instance variable declarations
+public class WeatherData implements Subject {
+    private List<Observer> observers;
+    private float temperature;
+    private float humidity;
+    private float pressure;
+
+    public WeatherData() {
+        observers = new ArrayList<Observer>();
+    }
+
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) {
+        observers.add(o);
+    }
+
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(temperature, humidity, pressure);
+        }
+    }
+
+    public void measurementsChanged() {
+        notifyObservers();
+    }
+
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
+    }
+
 
     public float getTemperature() {
-
+        return temperature;
     }
 
     public float getHumidity() {
-
+        return humidity;
     }
 
     public float getPressure() {
-
+        return pressure;
     }
-
-    /*
-     * This method gets called
-     * whenever the weather measurements
-     * have been updated
-     *
-     */
-    public void measurementsChanged() {
-
-        float temp = getTemperature();
-        float humidity = getHumidity();
-        float pressure = getPressure();
-
-        currentConditionsDisplay.update(temp, humidity, pressure);
-        statisticsDisplay.update(temp, humidity, pressure);
-        forecastDisplay.update(temp, humidity, pressure);
-    }
-
-    // other WeatherData methods here
 }
