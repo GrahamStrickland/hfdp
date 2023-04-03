@@ -1,30 +1,28 @@
 public class Stereo {
-    private String Cd;
-    private String Dvd;
-    private String station;
     private int volume;
 
     public void on() {
-
+        System.out.println("Stereo is On");
     }
     
     public void off() {
-
+        System.out.println("Stereo is Off");
     }
 
-    public void setCd(String cdTitle) {
-        Cd = cdTitle;
+    public void setCd() {
+        System.out.println("Stereo set to CD");
     }
 
-    public void setDvd(String dvdTitle) {
-        Dvd = dvdTitle;
+    public void setDvd() {
+        System.out.println("Stereo set to DVD");
     }
 
-    public void setRadio(String station) {
-        this.station = station;
+    public void setRadio() {
+        System.out.println("Stereo set to Radio");
     }
 
     public void setVolume(int volume) {
         this.volume = volume;
+        System.out.println("Stereo volume set to " + this.volume);
     }
 }
