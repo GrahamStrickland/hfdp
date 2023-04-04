@@ -1,3 +1,6 @@
+package commands;
+import appliances.Light;
+
 public class LightOffCommand implements Command {
     Light light;
 

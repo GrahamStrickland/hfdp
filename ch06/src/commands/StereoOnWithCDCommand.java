@@ -1,3 +1,6 @@
+package commands;
+import appliances.Stereo;
+
 public class StereoOnWithCDCommand implements Command {
     Stereo stereo;
 

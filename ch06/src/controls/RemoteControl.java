@@ -1,3 +1,6 @@
+package controls;
+import commands.Command;
+
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;

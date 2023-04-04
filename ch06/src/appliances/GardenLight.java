@@ -1,8 +1,16 @@
+package appliances;
 import java.util.Date;
 
 public class GardenLight extends Light {
     private Date duskTime = new Date();
     private Date dawnTime = new Date();
+
+    public GardenLight() {
+        super("Garden");
+
+        duskTime.setTime((duskTime.getTime() % 43200000L) + 43200000L);
+        dawnTime.setTime(dawnTime.getTime() % 43200000L);
+    }
 
     public void setDuskTime(int time) {
         assert(time <= 6);
@@ -17,10 +25,10 @@ public class GardenLight extends Light {
     }
 
     public void manualOn() {
-        System.out.println("Garden Light is On");
+        super.on();
     }
 
     public void manualOff() {
-        System.out.println("Garden Light is Off");
+        super.off();
     }
 }

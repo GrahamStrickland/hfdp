@@ -1,3 +1,6 @@
+package controls;
+import commands.Command;
+
 public class SimpleRemoteControl {
     Command slot;
     public SimpleRemoteControl() {}
