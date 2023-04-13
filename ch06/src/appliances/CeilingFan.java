@@ -1,29 +1,29 @@
 package appliances;
 public class CeilingFan {
-    private final int HIGH_SPEED = 6;
-    private final int MED_SPEED = 4;
-    private final int LOW_SPEED = 2;
-
-    private String location;
-    private int speed;
+    public static final int HIGH = 3;
+    public static final int MEDIUM = 2;
+    public static final int LOW = 1;
+    public static final int OFF = 0;
+    String location;
+    int speed;
 
     public CeilingFan(String location) {
         this.location = location;
-        speed = 0;
+        speed = OFF;
     }
 
     public void high() {
-        speed = HIGH_SPEED;
+        speed = HIGH;
         System.out.println(location + " Ceiling Fan speed set to " + getSpeed());
     }
 
     public void medium() {
-        speed = MED_SPEED;
+        speed = MEDIUM;
         System.out.println(location + " Ceiling Fan speed set to " + getSpeed());
     }
 
     public void low() {
-        speed = LOW_SPEED;
+        speed = LOW;
         System.out.println(location + " Ceiling Fan speed set to " + getSpeed());
     }
 
@@ -32,7 +32,7 @@ public class CeilingFan {
     }
 
     public void off() {
-        speed = 0;
+        speed = OFF;
         System.out.println(location + " Ceiling Fan is Off");
     }
     
