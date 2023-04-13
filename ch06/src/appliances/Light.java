@@ -7,10 +7,10 @@ public class Light {
     }
 
     public void on() {
-        System.out.println(location + " Light is On");
+            System.out.println(location + " Light is on");
     }
 
     public void off() {
-        System.out.println(location + " Light is Off");
+        System.out.println(location + " Light is off");
     }
 }

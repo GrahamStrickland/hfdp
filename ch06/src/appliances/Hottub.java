@@ -1,26 +1,24 @@
 package appliances;
 public class Hottub {
-    private String location;
     private int temperature;
 
-    public Hottub(String location) {
-        this.location = location;
+    public Hottub() {
         temperature = 95;
     }
     
     public void circulate() {
-        System.out.println(location + " Hottub is Circulating");
+        System.out.println("Hottub is circulating");
     }
 
     public void jetsOn() {
-        System.out.println(location + " Hottub Jets are On");
+        System.out.println("Hottub Jets are on");
     }
 
     public void jetsOff() {
-        System.out.println(location + " Hottub Jets are Off");
+        System.out.println("Hottub Jets are off");
     }
 
     public void setTemperature(int temperature) {
-        System.out.println(location + " Hottub temperature is " + this.temperature + "F");
+        System.out.println("Hottub temperature is " + this.temperature + "F");
     }
 }

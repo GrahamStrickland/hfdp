@@ -11,11 +11,11 @@ public class TV {
     }
 
     public void on() {
-        System.out.println(location + " TV is On");
+        System.out.println(location + " TV is on");
     }
 
     public void off() {
-        System.out.println(location + " TV is Off");
+        System.out.println(location + " TV is off");
     }
 
     public void setInputChannel(int inputChannel) {
