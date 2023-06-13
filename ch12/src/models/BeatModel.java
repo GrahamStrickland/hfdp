@@ -23,7 +23,10 @@ public class BeatModel implements BeatModelInterface, Runnable {
             clip = (Clip) AudioSystem.getLine(new Line.Info(Clip.class));
             clip.open(AudioSystem.getAudioInputStream(resource));
         }
-        catch (Exception ex) { /* ... */ }
+        catch (Exception ex) { 
+            System.out.println("Error: Can't load clip");
+            System.out.println(ex);
+        }
     }
 
     public void on() {
@@ -58,6 +61,49 @@ public class BeatModel implements BeatModelInterface, Runnable {
         return bpm;
     }
 
-    // Code to register and notify observers
-    // Audio code to handle the beat
+    public void registerObserver(Observer o) {
+        beatObservers.add(o);
+    }
+
+    public void notifyBeatObservers() {
+        for (int i = 0; i < beatObservers.size(); i++) {
+            BeatObserver observer = (BeatObserver)beatObservers.get(i);
+            observer.updateBeat();
+        }
+    }
+
+    public void registerObserver(BPMObserver o) {
+        bpmObservers.add(o);
+    }
+
+    public void notifyBPMObservers() {
+        for (int i = 0; i < bpmObservers.size(); i++) {
+            BPMObserver observer = (BPMObserver)bpmObservers.get(i);
+            observer.updateBPM();
+        }
+    }
+
+    public void removeObserver(BeatObserver o) {
+        int i = beatObservers.indexOf(o);
+        if (i >= 0) {
+            beatObservers.remove(i);
+        }
+    }
+
+    public void removeObserver(BPMObserver o) {
+        int i = bpmObservers.indexOf(o);
+        if (i >= 0) {
+            bpmObservers.remove(i);
+        }
+    }
+
+    public void playBeat() {
+        clip.setFramePosition(0);
+        clip.start();
+    }
+
+    public void stopBeat() {
+        clip.setFramePosition(0);
+        clip.stop();
+    }
 }
