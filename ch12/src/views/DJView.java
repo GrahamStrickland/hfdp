@@ -6,11 +6,18 @@ import javax.swing.*;
 
 import controllers.interfaces.ControllerInterface;
 import models.interfaces.BeatModelInterface;
+import observers.interfaces.BeatObserver;
+import observers.interfaces.BPMObserver;
 
 public class DJView implements ActionListener, BeatObserver, BPMObserver {
-    BeatBar beatBar;
     BeatModelInterface model;
     ControllerInterface controller;
+    JFrame viewFrame;
+    JPanel viewPanel;
+    BeatBar beatBar;
+    JLabel bpmOutputLabel;
+    JFrame controlFrame;
+    JPanel controlPanel;
     JLabel bpmLabel;
     JTextField bpmTextField;
     JButton setBPMButton;
@@ -20,11 +27,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
     JMenu menu;
     JMenuItem startMenuItem;
     JMenuItem stopMenuItem;
-    JFrame controlFrame;
-    JFrame viewFrame;
-    JPanel controlPanel;
-    JPanel viewPanel;
-    JLabel bpmOutputLabel;
 
     public DJView(ControllerInterface controller, BeatModelInterface model) {
         this.controller = controller;

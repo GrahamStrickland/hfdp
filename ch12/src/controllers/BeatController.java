@@ -1,5 +1,6 @@
 package controllers;
 
+import controllers.interfaces.ControllerInterface;
 import models.interfaces.BeatModelInterface;
 import views.DJView;
 

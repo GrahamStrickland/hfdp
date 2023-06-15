@@ -1,5 +1,8 @@
 package models.interfaces;
 
+import observers.interfaces.BeatObserver;
+import observers.interfaces.BPMObserver;
+
 public interface BeatModelInterface {
     void initialize();
 

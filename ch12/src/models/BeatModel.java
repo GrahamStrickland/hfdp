@@ -8,6 +8,8 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.Line;
 
 import models.interfaces.BeatModelInterface;
+import observers.interfaces.BeatObserver;
+import observers.interfaces.BPMObserver;
 
 public class BeatModel implements BeatModelInterface, Runnable {
     List<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
@@ -61,7 +63,7 @@ public class BeatModel implements BeatModelInterface, Runnable {
         return bpm;
     }
 
-    public void registerObserver(Observer o) {
+    public void registerObserver(BeatObserver o) {
         beatObservers.add(o);
     }
 
